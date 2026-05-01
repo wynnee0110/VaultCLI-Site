@@ -1,0 +1,10 @@
+@tailwindcss
+
+.ascii {
+  font-family: monospace;
+  font-size: 16px;
+  font-weight: bold;
+  color: #00ffcc;
+  text-align: center;
+}
+

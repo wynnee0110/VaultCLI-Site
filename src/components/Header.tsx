@@ -4,11 +4,13 @@ export default function Header() {
 
             {/* LEFT */}
             <div className="flex items-center gap-6">
-                <div className="text-white font-semibold tracking-tight">
-                    VaultCLI
-                </div>
+                <a href="/">
+                    <div className="text-white font-semibold tracking-tight">
+                        VaultCLI
+                    </div>
+                </a>
 
-                <a href="#" className="text-sm text-slate-400 hover:text-white transition">
+                <a href="/Docs" className="text-sm text-slate-400 hover:text-white transition">
                     Docs
                 </a>
             </div>
@@ -23,7 +25,7 @@ export default function Header() {
                 />
 
                 <a
-                    href="#"
+                    href="https://github.com/wynnee0110"
                     className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition"
                 >
                     GitHub

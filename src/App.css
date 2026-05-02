@@ -1,6 +1,4 @@
-@tailwindcss
-
-.ascii {
+@tailwindcss .ascii {
   font-family: monospace;
   font-size: 16px;
   font-weight: bold;
@@ -8,3 +6,124 @@
   text-align: center;
 }
 
+/* ── Responsive additions (no existing code changed) ── */
+
+/* Fluid ASCII art scaling */
+.ascii {
+  font-size: clamp(4px, 1.3vw, 16px);
+  overflow-x: hidden;
+  white-space: pre;
+  line-height: 1.2;
+}
+
+/* Section horizontal padding on small screens */
+section {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* h1 fluid sizing */
+h1 {
+  font-size: clamp(1.25rem, 5vw, 3rem);
+  text-align: center;
+  max-width: 90vw;
+}
+
+/* Command snippet wrapper — constrain & pad */
+.w-full.mt-10.max-w-2xl {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+
+/* Inner command code block wraps on tiny screens */
+code.text-sm {
+  word-break: break-all;
+  white-space: normal;
+}
+
+/* Buttons row wraps gracefully */
+.mt-10.gap-2.flex.justify-center {
+  flex-wrap: wrap;
+}
+
+/* Tablet (max 768px) */
+@media (max-width: 768px) {
+  .ascii {
+    font-size: clamp(3px, 2vw, 10px);
+    margin-bottom: -24px !important;
+  }
+
+  h1 {
+    font-size: clamp(1.1rem, 5vw, 1.75rem);
+  }
+}
+
+/* ── Prevent any element from causing horizontal overflow ── */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+section {
+  overflow-x: hidden;
+}
+
+/* Mobile (max 480px) */
+@media (max-width: 480px) {
+  .ascii {
+    font-size: clamp(2px, 1.8vw, 7px);
+    margin-bottom: -16px !important;
+  }
+
+  h1 {
+    font-size: clamp(1rem, 5.5vw, 1.4rem);
+  }
+
+  section {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+/* Small mobile — 375 x 667 (iPhone SE) */
+@media (max-width: 390px) {
+  /* ASCII: at 375px wide, 1.5vw ≈ 5.6px — keeps all 60 cols on screen */
+  .ascii {
+    font-size: clamp(2px, 1.45vw, 5.5px) !important;
+    margin-bottom: -12px !important;
+    letter-spacing: -0.02em;
+  }
+
+  /* h1: comfortable reading size */
+  h1 {
+    font-size: clamp(1rem, 6vw, 1.35rem) !important;
+    padding: 0 0.5rem;
+  }
+
+  /* Header: hide search bar to reclaim space */
+  header input[type="text"] {
+    display: none;
+  }
+
+  /* Command snippet: full width, wrapping URL */
+  .w-full.mt-10.max-w-2xl {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  code.text-sm {
+    font-size: 0.7rem;
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+
+  /* Buttons: stack vertically if needed */
+  .mt-10.gap-2.flex.justify-center {
+    flex-direction: column;
+    align-items: center;
+  }
+}

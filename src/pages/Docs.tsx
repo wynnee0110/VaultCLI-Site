@@ -1,10 +1,17 @@
 import { useState, useEffect } from 'react';
 import { BinaryBackground } from '../components/BinaryBackground';
 import Header from '../components/Header';
-import { Terminal, Copy, Check } from 'lucide-react';
 
+import GettingStarted from './sections/GettingStarted';
+import Installation from './sections/Installation';
+import Commands from './sections/Commands';
+import Configuration from './sections/Configuration';
+import Security from './sections/Security';
 
-
+interface NavItem {
+  id: string;
+  label: string;
+}
 const NAV_ITEMS = [
   { id: 'getting-started', label: 'Getting Started' },
   { id: 'installation', label: 'Installation' },
@@ -15,7 +22,6 @@ const NAV_ITEMS = [
 
 function Docs() {
   const [activeSection, setActiveSection] = useState('getting-started');
-  const [copied, setCopied] = useState(false);
 
   // Simple scroll spy to highlight sidebar
   useEffect(() => {
@@ -35,16 +41,6 @@ function Docs() {
 
     return () => observer.disconnect();
   }, []);
-
-const handleCopy = async (text: string): Promise<void> => {
-  try {
-    await navigator.clipboard.writeText(text);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  } catch (err: unknown) {
-    console.error("Failed to copy:", err);
-  }
-};
 
   return (
     <div className="min-h-screen bg-black/90 text-zinc-300 selection:bg-indigo-500/30">
@@ -95,62 +91,11 @@ const handleCopy = async (text: string): Promise<void> => {
             </p>
           </header>
 
-          {/* SECTION: Getting Started */}
-          <section id="getting-started" className="scroll-mt-32 mb-16">
-            <h2 className="text-2xl font-semibold text-white mb-4">Getting Started</h2>
-            <p className="text-zinc-400 leading-7">
-              VaultCLI uses AES-256-GCM encryption to ensure your data stays private. To begin, 
-              ensure you have a stable internet connection for the initial binary fetch.
-            </p>
-          </section>
-
-          {/* SECTION: Installation */}
-          <section id="installation" className="scroll-mt-32 mb-16">
-            <h2 className="text-2xl font-semibold text-white mb-6">Installation</h2>
-            <div className="group relative bg-zinc-950 border border-zinc-800 rounded-xl overflow-hidden shadow-2xl">
-              <div className="flex items-center justify-between px-4 py-2 bg-zinc-900/50 border-b border-zinc-800">
-                <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-mono">Terminal</span>
-                <button 
-                  onClick={() => handleCopy('curl -sSL https://vaultcli.dev/install | bash')}
-                  className="p-1.5 hover:bg-zinc-800 rounded-md transition-colors"
-                >
-                  {copied ? <Check size={14} className="text-green-400" /> : <Copy size={14} className="text-zinc-500" />}
-                </button>
-              </div>
-              <div className="p-6 overflow-x-auto">
-                <code className="text-indigo-300 text-sm md:text-base whitespace-nowrap">
-                  <span className="text-zinc-500 select-none">$ </span>
-                  curl -sSL https://vaultcli.dev/install | bash
-                </code>
-              </div>
-            </div>
-          </section>
-
-          {/* SECTION: Commands */}
-          <section id="commands" className="scroll-mt-32 mb-16">
-            <h2 className="text-2xl font-semibold text-white mb-6">Core Commands</h2>
-            <div className="grid gap-4">
-              {[
-                { cmd: 'vault init', desc: 'Creates a new local master key and configuration file.' },
-                { cmd: 'vault add [key]', desc: 'Encrypts and stores a new secret string.' },
-                { cmd: 'vault list', desc: 'Displays all stored entry keys (values hidden).' },
-              ].map((item, i) => (
-                <div key={i} className="p-4 rounded-xl border border-zinc-800 bg-zinc-900/20 hover:bg-zinc-900/40 transition-colors group">
-                  <div className="flex items-center gap-3">
-                    <Terminal size={16} className="text-indigo-500" />
-                    <code className="text-white font-mono text-sm">{item.cmd}</code>
-                  </div>
-                  <p className="mt-2 text-sm text-zinc-500 ml-7">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* ADD PLACEHOLDERS FOR REMAINING SECTIONS */}
-          <section id="configuration" className="h-64 border-t border-zinc-800 pt-10 mt-10">
-             <h2 className="text-2xl font-semibold text-white mb-4">Configuration</h2>
-             <p className="text-zinc-500 italic">Advanced config documentation coming soon...</p>
-          </section>
+          <GettingStarted />
+          <Installation />
+          <Commands />
+          <Configuration />
+          <Security />
         </div>
       </section>
     </div>

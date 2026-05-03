@@ -3,6 +3,17 @@ import { BinaryBackground } from '../components/BinaryBackground';
 import Header from '../components/Header';
 import { Terminal, Copy, Check } from 'lucide-react';
 
+interface NavItem {
+  id: string;
+  label: string;
+}
+
+interface CommandItem {
+  cmd: string;
+  desc: string;
+}
+
+
 const NAV_ITEMS = [
   { id: 'getting-started', label: 'Getting Started' },
   { id: 'installation', label: 'Installation' },

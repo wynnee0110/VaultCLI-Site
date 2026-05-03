@@ -60,7 +60,7 @@ function Home() {
 
 
                 <div className='mt-10 gap-2 flex justify-center'>
-                    <a className="h-12 w-44 google-sans-flex-400 bg-white text-black rounded-full hover:opacity-80 transition-opacity flex items-center justify-center" href='/Docs'>Documentation
+                    <a className="h-12 w-44 google-sans-flex-400 bg-white text-black rounded-full hover:opacity-80 transition-opacity flex items-center justify-center" href='/docs'>Documentation
 
                     </a>
 

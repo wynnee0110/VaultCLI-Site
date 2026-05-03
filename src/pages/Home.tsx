@@ -5,7 +5,7 @@ import { BinaryBackground } from '../components/BinaryBackground';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { useState } from "react";
-
+import { Link } from 'react-router-dom';
 
 function Home() {
 
@@ -60,9 +60,9 @@ function Home() {
 
 
                 <div className='mt-10 gap-2 flex justify-center'>
-                    <a className="h-12 w-44 google-sans-flex-400 bg-white text-black rounded-full hover:opacity-80 transition-opacity flex items-center justify-center" href='/docs'>Documentation
+                    <Link className="h-12 w-44 google-sans-flex-400 bg-white text-black rounded-full hover:opacity-80 transition-opacity flex items-center justify-center" to='/docs'>Documentation
 
-                    </a>
+                    </Link>
 
                     <a className="h-12 w-28 google-sans-flex-400 px-4 py-2 text-sm bg-zinc-900/60 backdrop-blur-xl text-white rounded-full hover:opacity-80 transition flex items-center gap-2" href="https://github.com/wynnee0110/VaultCLI">
                        

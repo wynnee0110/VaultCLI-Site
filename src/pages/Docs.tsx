@@ -45,11 +45,15 @@ function Docs() {
     return () => observer.disconnect();
   }, []);
 
-  const handleCopy = (text) => {
-    navigator.clipboard.writeText(text);
+const handleCopy = async (text: string): Promise<void> => {
+  try {
+    await navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
-  };
+  } catch (err: unknown) {
+    console.error("Failed to copy:", err);
+  }
+};
 
   return (
     <div className="min-h-screen bg-black/90 text-zinc-300 selection:bg-indigo-500/30">

@@ -1,6 +1,6 @@
-export default function Header() {
+export default function DocsHeader() {
     return (
-        <header className="sticky top-0 w-full px-6 py-4 flex items-center justify-between">
+        <header className="sticky top-0 z-50 w-full px-6 py-4 flex items-center justify-between bg-black/90 backdrop-blur border-b border-slate-800/50">
 
             {/* LEFT */}
             <div className="flex items-center gap-6">

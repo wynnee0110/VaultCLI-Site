@@ -94,22 +94,35 @@ export const DB_PROVIDERS: DatabaseProvider[] = [
 
 export const SQL_COMMANDS: Partial<Record<DatabaseProviderId, string>> = {
   supabase: `
-**SQL Commands for Supabase**
-
-CREATE TABLE IF NOT EXISTS credentials (
-  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-  service_name VARCHAR(100) NOT NULL,
-  username TEXT NOT NULL,
-  password TEXT NOT NULL,
-  url VARCHAR(500) NOT NULL,
-  description TEXT,
-  created_at TIMESTAMP DEFAULT NOW(),
-  last_used_at TIMESTAMP,
-  is_deleted BOOLEAN DEFAULT FALSE
+create table if not exists public.vaults (
+  user_id text primary key,
+  encrypted_vault text not null,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
 );
 
-CREATE INDEX idx_service_name ON credentials(service_name);
-CREATE INDEX idx_last_used ON credentials(last_used_at) WHERE last_used_at IS NOT NULL;
+alter table public.vaults enable row level security;
+
+create policy "Users can read their own vault"
+  on public.vaults
+  for select
+  to authenticated
+  using ((select auth.uid()::text) = user_id);
+
+create policy "Users can insert their own vault"
+  on public.vaults
+  for insert
+  to authenticated
+  with check ((select auth.uid()::text) = user_id);
+
+create policy "Users can update their own vault"
+  on public.vaults
+  for update
+  to authenticated
+  using ((select auth.uid()::text) = user_id)
+  with check ((select auth.uid()::text) = user_id);
+
+
 `,
 };
 

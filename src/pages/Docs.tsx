@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { BinaryBackground } from '../components/BinaryBackground';
 import GettingStarted from '../components/sections/GettingStarted';
 import Installation from '../components/sections/Installation';

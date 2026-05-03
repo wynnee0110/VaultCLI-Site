@@ -385,7 +385,7 @@ export default function Installation() {
                             <p className="pt-6 pb-4 text-start text-sm text-zinc-400">
                               3. Run this on SQL editor
                             </p>
-                            <div className="mt-3">
+                            <div className="mt-3 rounded-xl overflow-hidden border border-zinc-800 bg-zinc-950">
                               <CopyableCodeBlock
                                 label="sql"
                                 value={activeDbSqlCommand}

@@ -127,9 +127,9 @@ function Home() {
 
                         {/* Optional CTA buttons */}
                         <div className="mt-6 flex gap-3">
-                            <button className="px-5 py-2 bg-white text-black rounded-full text-sm font-medium hover:opacity-80 transition">
+                            <a href="/docs" className="px-5 py-2 bg-white text-black rounded-full text-sm font-medium hover:opacity-80 transition">
                                 Get Started
-                            </button>
+                            </a>
 
                         </div>
 
@@ -147,21 +147,21 @@ function Home() {
                             </div>
 
                             {/* Terminal content */}
-                            <div className="p-4 font-mono text-sm text-green-400 space-y-2 text-start">
+<div className="p-4 font-mono text-sm text-green-400 space-y-2 text-start">
 
-                                <p><span className="text-zinc-500">$</span> vault init</p>
-                                <p className="text-zinc-400">Vault initialized successfully.</p>
+    <p><span className="text-zinc-500">$</span> vault init</p>
+    <p className="text-zinc-400">✔ Vault initialized</p>
 
-                                <p><span className="text-zinc-500">$</span> vault add github</p>
-                                <p className="text-zinc-400">✔ Stored credentials for github</p>
+    <p><span className="text-zinc-500">$</span> vault login</p>
+    <p className="text-zinc-400">✔ Authenticated successfully</p>
 
-                                <p><span className="text-zinc-500">$</span> vault list</p>
-                                <p className="text-zinc-400">github</p>
+    <p><span className="text-zinc-500">$</span> vault put apikey/secret_key ********</p>
+    <p className="text-zinc-400">✔ Stored secret at apikey/secret_key</p>
 
-                                <p><span className="text-zinc-500">$</span> vault get github</p>
-                                <p className="text-zinc-400">••••••••••••••••</p>
+    <p><span className="text-zinc-500">$</span> vault get apikey/secret_key</p>
+    <p className="text-zinc-400">••••••••••••••••</p>
 
-                            </div>
+</div>
 
                         </div>
 

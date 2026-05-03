@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { BinaryBackground } from '../components/BinaryBackground';
 import GettingStarted from '../components/sections/GettingStarted';
 import Installation from '../components/sections/Installation';
+import Commands from '../components/sections/Commands';
 import DocsHeader from '../components/DocsHeader';
 
 const NAV_ITEMS = [
@@ -55,7 +56,7 @@ function Docs() {
         <main className="flex-1 max-w-3xl pb-32">
           {activePage === "getting-started" && <GettingStarted />}
           {activePage === "installation" && <Installation />}
-          {activePage === "commands" && <div>Commands section here</div>}
+          {activePage === "commands" && <Commands />}
           {activePage === "configuration" && <div>Configuration section here</div>}
           {activePage === "security" && <div>Security section here</div>}
         </main>

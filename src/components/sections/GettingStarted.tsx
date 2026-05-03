@@ -111,21 +111,7 @@ export default function GettingStarted() {
                         </div>
                     </div>
 
-                    {/* Step 3 */}
-                    <div className="flex gap-4">
-                        <div className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-zinc-800 text-zinc-300 font-medium text-sm">
-                            3
-                        </div>
-                        <div className="flex-grow pt-1">
-                            <h4 className="text-zinc-200 font-medium mb-2">Store and retrieve secrets</h4>
-                            <div className="bg-zinc-950 border border-zinc-800 rounded-lg p-3 font-mono text-sm text-zinc-300 space-y-1.5">
-                                <div><span className="text-zinc-500"># Add a new secret</span></div>
-                                <div><span className="text-emerald-400">vaultcli</span> set STRIPE_KEY sk_test_123</div>
-                                <div className="pt-2"><span className="text-zinc-500"># Retrieve it later</span></div>
-                                <div><span className="text-emerald-400">vaultcli</span> get STRIPE_KEY</div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
 

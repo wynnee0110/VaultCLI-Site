@@ -110,7 +110,7 @@ section {
 
   /* Command snippet: full width, wrapping URL */
   .w-full.mt-10.max-w-2xl {
-    padding-left: 0.5rem;
+    padding-left: 0.5rem; 
     padding-right: 0.5rem;
   }
 

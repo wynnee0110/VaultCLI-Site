@@ -289,7 +289,7 @@ export default function Installation() {
             Ubuntu, Arch, and Fedora.
           </p>
 
-          <div className="space-y-6">
+          <div className="mt-8 space-y-6">
             {INSTALLATION_STEPS.map((step, index) => (
               <div key={step.title} className="flex gap-4">
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-zinc-800 text-sm text-white">

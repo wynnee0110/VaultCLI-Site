@@ -19,8 +19,11 @@ function Docs() {
 
   return (
     <div className="min-h-screen bg-black/90 text-zinc-300 selection:bg-indigo-500/30">
-            <BinaryBackground />
-      <DocsHeader />
+      <BinaryBackground />
+      <DocsHeader
+        activePage={activePage}
+        setActivePage={setActivePage}
+      />
 
 
 
@@ -29,7 +32,7 @@ function Docs() {
            style={{ minHeight: 'calc(100vh - 5rem)' }}>
 
         {/* SIDEBAR — fixed position relative to viewport */}
-        <aside className="hidden md:block w-64 shrink-0">
+        <aside className="hidden md:block w-64 shrink-0 ">
           <div className="fixed top-24 w-64">
             <h3 className="text-xs uppercase tracking-widest text-zinc-500 mb-4">
               Documentation
@@ -51,6 +54,8 @@ function Docs() {
             </nav>
           </div>
         </aside>
+
+
 
         {/* MAIN CONTENT — scrolls normally */}
         <main className="flex-1 max-w-3xl pb-32">

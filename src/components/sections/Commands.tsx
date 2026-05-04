@@ -35,6 +35,12 @@ export default function Commands() {
             description: "Deletes a stored secret permanently from the vault.",
             usage: "vault delete <key>",
             example: "$ vault delete apikey/secret_key\n✔ Deleted secret at apikey/secret_key",
+        },
+        {
+            name:"update",
+            description:"Updates an existing secret in the vault.",
+            usage: "vault update <key> <value>",
+            example: "$ vault update apikey/secret_key ********\n✔ Updated secret at apikey/secret_key"
         }
     ];
 
@@ -54,16 +60,16 @@ export default function Commands() {
             <div className="space-y-6">
                 {commands.map((cmd) => (
                     <div key={cmd.name} className="p-6 rounded-xl border border-zinc-800 bg-zinc-900/30 hover:bg-zinc-900/50 transition-colors">
-                        <div className="flex items-center gap-3 mb-3">
+                        <div className="flex items-center gap-3 mb-2">
                             <h3 className="text-xl font-mono font-semibold text-emerald-400">
-                                vault {cmd.name}
+                                $ vault <span className='text-zinc-100'>{cmd.name}</span>
                             </h3>
                         </div>
-                        <p className="text-zinc-400 mb-5 leading-relaxed">
+                        <p className="text-zinc-400 mb-4 leading-relaxed">
                             {cmd.description}
                         </p>
                         
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <h4 className="text-xs font-medium text-zinc-500 uppercase tracking-wider mb-2">Usage</h4>
                                 <code className="inline-block px-3 py-1.5 rounded-lg bg-zinc-950 border border-zinc-800 text-zinc-300 text-sm font-mono">
@@ -71,7 +77,7 @@ export default function Commands() {
                                 </code>
                             </div>
 
-                            <div>
+                            <div className="mb-5">
                                 <h4 className="text-xs font-medium text-zinc-500 uppercase tracking-wider mb-2">Example</h4>
                                 <div className="bg-zinc-950 border border-zinc-800 rounded-lg p-3 font-mono text-sm text-zinc-300 whitespace-pre-line leading-relaxed">
                                     {cmd.example}

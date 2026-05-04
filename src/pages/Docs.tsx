@@ -4,6 +4,8 @@ import GettingStarted from '../components/sections/GettingStarted';
 import Installation from '../components/sections/Installation';
 import Commands from '../components/sections/Commands';
 import DocsHeader from '../components/DocsHeader';
+import Configuration from '../components/sections/Configuration';
+import Faq from '../components/sections/Faq';
 
 const NAV_ITEMS = [
   { id: 'getting-started', label: 'Getting Started' },
@@ -11,6 +13,7 @@ const NAV_ITEMS = [
   { id: 'commands', label: 'Commands' },
   { id: 'configuration', label: 'Configuration' },
   { id: 'security', label: 'Security' },
+  { id: 'faq', label: 'FAQ' }
   
 ];
 
@@ -24,8 +27,6 @@ function Docs() {
         activePage={activePage}
         setActivePage={setActivePage}
       />
-
-
 
       {/* Outer wrapper: full height minus header, flex row */}
       <div className="relative flex w-full max-w-7xl mx-auto mt-20 px-6 gap-16"
@@ -55,15 +56,13 @@ function Docs() {
           </div>
         </aside>
 
-
-
         {/* MAIN CONTENT — scrolls normally */}
         <main className="flex-1 max-w-3xl pb-32">
           {activePage === "getting-started" && <GettingStarted />}
           {activePage === "installation" && <Installation />}
           {activePage === "commands" && <Commands />}
-          {activePage === "configuration" && <div>Configuration section here</div>}
-          {activePage === "security" && <div>Security section here</div>}
+          {activePage === "configuration" && <Configuration/>}
+          {activePage === "faq" && <Faq/>}
         </main>
 
       </div>

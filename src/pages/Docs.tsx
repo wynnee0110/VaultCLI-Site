@@ -61,7 +61,7 @@ function Docs() {
           {activePage === "getting-started" && <GettingStarted />}
           {activePage === "installation" && <Installation />}
           {activePage === "commands" && <Commands />}
-          {activePage === "configuration" && <Configuration/>}
+          
           {activePage === "faq" && <Faq/>}
         </main>
 

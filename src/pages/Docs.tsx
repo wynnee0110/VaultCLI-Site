@@ -4,7 +4,7 @@ import GettingStarted from '../components/sections/GettingStarted';
 import Installation from '../components/sections/Installation';
 import Commands from '../components/sections/Commands';
 import DocsHeader from '../components/DocsHeader';
-import Configuration from '../components/sections/Configuration';
+
 import Faq from '../components/sections/Faq';
 
 const NAV_ITEMS = [

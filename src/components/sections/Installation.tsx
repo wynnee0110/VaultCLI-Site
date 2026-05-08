@@ -19,13 +19,7 @@ const { block: blockClass, pillButton: pillButtonClass, surface: surfaceClass } 
   INSTALLATION_STYLES;
 
 const LinuxIcon = () => (
-  <svg
-    viewBox="0 0 24 24"
-    className="h-4 w-4"
-    fill="currentColor"
-  >
-    <path d="M12 2c-2.5 0-4 2-4 4.5 0 1.5.5 2.5 1.2 3.3-.7.4-1.2 1.2-1.2 2.2 0 1.3.8 2.3 2 2.8-.2.5-.3 1-.3 1.5 0 2 1.2 3.7 2.3 3.7s2.3-1.7 2.3-3.7c0-.5-.1-1-.3-1.5 1.2-.5 2-1.5 2-2.8 0-1-.5-1.8-1.2-2.2.7-.8 1.2-1.8 1.2-3.3C16 4 14.5 2 12 2z" />
-  </svg>
+  <img src="./public/icons/linux-svgrepo-com.svg" alt="Linux" className="w-6 h-6" />
 );
 
 const OSIcon = ({ os }: { os: OperatingSystem }) => {
@@ -243,7 +237,7 @@ export default function Installation() {
   return (
     <section id="installation" className="mb-20 max-w-4xl scroll-mt-32">
       <div className="mb-10">
-        <h2 className="mb-4 text-3xl font-semibold tracking-tight text-zinc-100">
+        <h2 className="mb-4 text-start text-3xl font-semibold tracking-tight text-zinc-100">
           Installation Guide
         </h2>
         <p className="text-lg leading-relaxed text-zinc-400">

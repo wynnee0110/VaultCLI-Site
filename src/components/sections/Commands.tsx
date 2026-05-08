@@ -13,6 +13,18 @@ export default function Commands() {
             example: "$ vault login\n✔ Authenticated successfully",
         },
         {
+            name:"signup",
+            description:"Creates a new account with a master password.",
+            usage:"vault signup [password]",
+            example:"$ vault signup ********\n✔ Account created"
+        },
+        {
+            name: "logout",
+            description: "Logs you out of your session.",
+            usage: "vault logout",
+            example: "$ vault logout\n✔ Logged out successfully",
+        },
+        {
             name: "put",
             description: "Stores a secret in the vault securely. The secret is encrypted using AES-256 before being saved.",
             usage: "vault put <key> <value>",
@@ -30,12 +42,7 @@ export default function Commands() {
             usage: "vault list",
             example: "$ vault list\napikey/secret_key\ndatabase/url\ngithub/token",
         },
-        {
-            name: "delete",
-            description: "Deletes a stored secret permanently from the vault.",
-            usage: "vault delete <key>",
-            example: "$ vault delete apikey/secret_key\n✔ Deleted secret at apikey/secret_key",
-        },
+
         {
             name:"update",
             description:"Updates an existing secret in the vault.",
@@ -48,10 +55,10 @@ export default function Commands() {
         <section id="commands" className="scroll-mt-32 mb-16 max-w-3xl">
             {/* Header Section */}
             <div className="mb-10">
-                <h2 className="text-3xl font-semibold text-zinc-100 mb-4 tracking-tight">
+                <h2 className="text-start text-3xl font-semibold text-zinc-100 mb-4 tracking-tight">
                     Commands Reference
                 </h2>
-                <p className="text-zinc-400 text-lg leading-relaxed">
+                <p className="text-start text-zinc-400 text-lg leading-relaxed">
                     Explore the complete list of available CLI commands. VaultCLI is designed to be intuitive and fast, letting you manage your secrets seamlessly directly from the terminal.
                 </p>
             </div>

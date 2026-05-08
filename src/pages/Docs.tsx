@@ -4,9 +4,8 @@ import GettingStarted from '../components/sections/GettingStarted';
 import Installation from '../components/sections/Installation';
 import Commands from '../components/sections/Commands';
 import DocsHeader from '../components/DocsHeader';
-
+import Security from '../components/sections/Security';
 import Faq from '../components/sections/Faq';
-
 const NAV_ITEMS = [
   { id: 'getting-started', label: 'Getting Started' },
   { id: 'installation', label: 'Installation' },
@@ -61,8 +60,8 @@ function Docs() {
           {activePage === "getting-started" && <GettingStarted />}
           {activePage === "installation" && <Installation />}
           {activePage === "commands" && <Commands />}
-          
           {activePage === "faq" && <Faq/>}
+          {activePage === "security" && <Security/>}
         </main>
 
       </div>

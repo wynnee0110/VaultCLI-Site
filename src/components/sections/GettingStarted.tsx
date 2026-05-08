@@ -26,10 +26,10 @@ export default function GettingStarted() {
         <section id="getting-started" className="scroll-mt-32 mb-16 max-w-3xl">
             {/* Header Section */}
             <div className="mb-10">
-                <h2 className="text-3xl font-semibold text-zinc-100 mb-4 tracking-tight">
+                <h2 className="text-start text-3xl font-semibold text-zinc-100 mb-4 tracking-tight">
                     Getting Started
                 </h2>
-                <p className="text-zinc-400 text-lg leading-relaxed">
+                <p className="text-start text-zinc-400 text-lg leading-relaxed">
                     VaultCLI is your terminal-native, zero-knowledge secret manager. Keep your API keys, passwords, and environment variables encrypted and perfectly organized without ever leaving the command line.
                 </p>
             </div>

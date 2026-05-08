@@ -77,31 +77,6 @@ function Home() {
                     </a>
                 </div>
 
-                <div className='flex w-full mt-10 max-w-2xl'>
-
-
-
-                    <div className="mt-0 w-full flex justify-center">
-                        <div className="gap-4 bg-zinc-950 opacity-90 backdrop-blur-sm border border-slate-800 rounded-xl px-4 py-2 flex items-center justify-between">
-
-                            {/* command text */}
-                            <code className="text-sm text-green-300">
-                                curl -fsSL https://vaultcli/install | bash
-                            </code>
-
-                            {/* copy button */}
-                            <button
-                                onClick={handleCopy}
-                                className="text-xs text-slate-400 hover:text-white transition"
-                            >
-                                {copied ? "Copied!" : "Copy"}
-                            </button>
-
-                        </div>
-                    </div>
-
-                </div>
-
                 <div className="w-full max-w-6xl mt-20 px-6 flex flex-col md:flex-row items-center justify-between gap-10">
 
                     {/* LEFT SIDE — TEXT */}

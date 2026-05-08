@@ -19,9 +19,12 @@ const { block: blockClass, pillButton: pillButtonClass, surface: surfaceClass } 
   INSTALLATION_STYLES;
 
 const LinuxIcon = () => (
-  <img src="./public/icons/linux-svgrepo-com.svg" alt="Linux" className="w-6 h-6" />
+  <img
+    src="/icons/linux-svgrepo-com.svg"
+    alt="Linux"
+    className="w-6 h-6"
+  />
 );
-
 const OSIcon = ({ os }: { os: OperatingSystem }) => {
   if (os === "linux") return <LinuxIcon />;
 

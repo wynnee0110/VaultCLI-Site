@@ -4,31 +4,9 @@ import '../App.css';
 import { BinaryBackground } from '../components/BinaryBackground';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { useState } from "react";
 
 
 function Home() {
-
-    const [copied, setCopied] = useState(false);
-
-    // the command you want to copy
-    const command = "curl -fsSL https://raw.githubusercontent.com/wynnee0110/VaultCLI/main/install.sh | bash";
-
-    // function to copy text to clipboard
-    const handleCopy = async () => {
-        try {
-            // copies text to user clipboard
-            await navigator.clipboard.writeText(command);
-
-            // show feedback
-            setCopied(true);
-
-            // reset after 2 seconds
-            setTimeout(() => setCopied(false), 2000);
-        } catch (err) {
-            console.error("Failed to copy:", err);
-        }
-    };
 
     return (
         <>

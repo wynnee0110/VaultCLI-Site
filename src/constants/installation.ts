@@ -157,4 +157,5 @@ export const INSTALLATION_STYLES = {
   pillButton: "flex items-center gap-2 rounded-lg border px-3 py-2 text-xs transition",
   surface: "rounded-xl border border-zinc-800 bg-zinc-900/50",
   block: "rounded-xl border border-zinc-800 bg-zinc-950/70",
+  stepNumber: "flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-zinc-700 bg-zinc-800 text-sm font-semibold text-zinc-100 shadow-[0_0_15px_rgba(255,255,255,0.05)]",
 } as const;

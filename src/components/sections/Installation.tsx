@@ -14,8 +14,9 @@ import {
   type DatabaseProviderId,
   type OperatingSystem,
 } from "../../constants/installation";
+import Windows from "./InstallationOs/Windows";
 
-const { block: blockClass, pillButton: pillButtonClass, surface: surfaceClass } =
+const { block: blockClass, pillButton: pillButtonClass, surface: surfaceClass, stepNumber: stepNumberClass } =
   INSTALLATION_STYLES;
 
 const LinuxIcon = () => (
@@ -162,7 +163,7 @@ function CopyableCodeBlock({
   );
 }
 
-function ScreenshotCard({
+export function ScreenshotCard({
   instructions,
   screenshot,
 }: {
@@ -218,10 +219,11 @@ export default function Installation() {
   const [copiedKey, setCopiedKey] = useState<string | null>(null);
 
   const activeDbInfo = DB_PROVIDERS.find((db) => db.id === activeDb);
-  const isComingSoon = activeTab !== "linux";
+  const isComingSoon = activeTab !== "linux" && activeTab !== "windows";
+  const isWindows = activeTab === "windows";
   const isDbComingSoon = !activeDbInfo?.isAvailable;
   const activeDbDocsLink = DB_DOCS_LINK[activeDb] ?? "";
-  const activeDbScreenshot1Info = DB_SCREENSHOT1_INFO[activeDb];
+  const activeDbScreenshot1Info = DB_SCREENSHOT1_INFO[activeDb];  
   const activeDbScreenshot2Info = DB_SCREENSHOT2_INFO[activeDb];
   const activeDbSqlCommand = SQL_COMMANDS[activeDb] ?? "";
   const activeDbNote = DB_NOTES[activeDb] ?? "";
@@ -279,6 +281,8 @@ export default function Installation() {
             {activeTab.toUpperCase()} support is currently in development.
           </p>
         </div>
+      ) : isWindows ? (
+        <Windows />
       ) : (
         <>
           <p className="mb-8 leading-relaxed text-zinc-400">
@@ -289,7 +293,7 @@ export default function Installation() {
           <div className="mt-8 space-y-6">
             {INSTALLATION_STEPS.map((step, index) => (
               <div key={step.title} className="flex gap-4">
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-zinc-800 text-sm text-white">
+                <div className={stepNumberClass}>
                   {index + 1}
                 </div>
 

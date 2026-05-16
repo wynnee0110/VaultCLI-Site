@@ -19,7 +19,8 @@ import Windows from "./InstallationOs/Windows";
 const { block: blockClass, pillButton: pillButtonClass, surface: surfaceClass, stepNumber: stepNumberClass } =
   INSTALLATION_STYLES;
 
-const LinuxIcon = () => (
+const LinuxIcon = () => 
+  (
   <img
     src="/icons/linux-svgrepo-com.svg"
     alt="Linux"

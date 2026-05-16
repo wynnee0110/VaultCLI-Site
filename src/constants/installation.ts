@@ -1,4 +1,10 @@
+
 export type OperatingSystem = "linux" | "windows" | "mac";
+
+export type ScreenshotCard = {
+  screenshot: string;
+  className?: string;
+};
 
 export type DatabaseProviderId =
   | "supabase"

@@ -25,11 +25,7 @@ section {
 }
 
 /* h1 fluid sizing */
-h1 {
-  font-size: clamp(1.25rem, 5vw, 3rem);
-  text-align: center;
-  max-width: 90vw;
-}
+
 
 /* Command snippet wrapper — constrain & pad */
 .w-full.mt-10.max-w-2xl {

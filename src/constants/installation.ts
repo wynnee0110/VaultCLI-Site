@@ -160,8 +160,8 @@ export const DB_SCREENSHOT2_INFO: Partial<Record<DatabaseProviderId, string[]>> 
 };
 
 export const INSTALLATION_STYLES = {
-  pillButton: "flex items-center gap-2 rounded-lg border px-3 py-2 text-xs transition",
-  surface: "rounded-xl border border-zinc-800 bg-zinc-900/50",
-  block: "rounded-xl border border-zinc-800 bg-zinc-950/70",
-  stepNumber: "flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-zinc-700 bg-zinc-800 text-sm font-semibold text-zinc-100 shadow-[0_0_15px_rgba(255,255,255,0.05)]",
+  pillButton: "inline-block px-3 py-1 text-sm border border-zinc-700 bg-[#161b22] hover:bg-zinc-800 transition-colors mb-2 mr-2 rounded-md",
+  surface: "border-b border-zinc-800 pb-6 mb-6",
+  block: "bg-[#161b22] border border-zinc-800 px-4 py-3 my-4 rounded-md",
+  stepNumber: "text-zinc-500 font-mono w-6 shrink-0 pt-0.5",
 } as const;

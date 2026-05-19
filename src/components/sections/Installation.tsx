@@ -264,8 +264,8 @@ export default function Installation() {
             aria-pressed={activeTab === tab}
             className={`${pillButtonClass} ${
               activeTab === tab
-                ? "border-zinc-700 bg-zinc-800 text-white"
-                : "border-zinc-800 bg-zinc-900/50 text-zinc-500 hover:border-zinc-700 hover:text-white"
+                ? "border-zinc-400 text-white"
+                : "border-transparent text-zinc-500 hover:border-zinc-700 hover:text-white"
             }`}
           >
             <OSIcon os={tab} />
@@ -332,8 +332,8 @@ export default function Installation() {
                             aria-pressed={activeDb === db.id}
                             className={`${pillButtonClass} ${
                               activeDb === db.id
-                                ? "border-zinc-700 bg-zinc-800 text-white"
-                                : "border-zinc-800 bg-zinc-900/50 text-zinc-500 hover:border-zinc-700 hover:text-white"
+                                ? "border-zinc-400 text-white"
+                                : "border-transparent text-zinc-500 hover:border-zinc-700 hover:text-white"
                             }`}
                           >
                             <DbIcon db={db.id} />

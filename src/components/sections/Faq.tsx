@@ -1,8 +1,4 @@
-
-
-function Faq() {
-
-
+export default function Faq() {
     const faqData = [
         {
             question: "What is VaultCli?",
@@ -26,109 +22,57 @@ function Faq() {
         }
     ];
 
+    return (
+        <div className="space-y-10">
+            <div>
+                <h1 className="text-3xl font-bold mb-4 pb-2 border-b border-zinc-800">Frequently Asked Questions</h1>
+            </div>
 
-  return (
-    <div>
-        <h2 className="text-4xl mb-6 font-bold text-start">
-            Frequently Asked Questions?
-        </h2>
-        <div className=''>
-            {faqData.map((faq) => (
-                <div className='text-start mb-4'>
-                    <h2 className='font-bold text-xl mb-4'>{faq.question}</h2>
-                    <p className='ml-4 text-sm'>{faq.answer}</p>
-                </div>
-            ))}
+            <div className="space-y-8">
+                {faqData.map((faq, index) => (
+                    <div key={index}>
+                        <h2 className="text-xl font-semibold mb-2">{faq.question}</h2>
+                        <p className="text-zinc-300">{faq.answer}</p>
+                    </div>
+                ))}
+            </div>
+
+            <div className="pt-8 border-t border-zinc-800">
+                <h2 className="text-2xl font-bold mb-4">What’s next? Building your app with VaultCLI</h2>
+                <p className="text-zinc-300 mb-4">
+                    Now that you’ve set up VaultCLI, the next step is integrating it into your application. If you’re unfamiliar with the technologies used in this project, check their official documentation below.
+                </p>
+                <p className="text-zinc-300 mb-4">
+                    If you get stuck or need help, you can join our community Discord and ask questions — we’re happy to help you get started.
+                </p>
+
+                <ul className="list-disc pl-6 space-y-2 text-blue-400">
+                    <li><a href="#" className="hover:underline">PostgreSQL — relational database for structured data</a></li>
+                    <li><a href="#" className="hover:underline">Supabase — backend-as-a-service with auth and database tools</a></li>
+                    <li><a href="#" className="hover:underline">MySQL — widely used relational database system</a></li>
+                    <li><a href="#" className="hover:underline">MongoDB — NoSQL database for flexible, document-based storage</a></li>
+                </ul>
+            </div>
+
+            <div className="pt-8 border-t border-zinc-800">
+                <h2 className="text-2xl font-bold mb-4">How do I keep my app up to date?</h2>
+                <p className="text-zinc-300 mb-4">
+                    To keep your app up to date with the latest version of VaultCLI, you can use the following command:
+                </p>
+                <pre className="bg-[#161b22] border border-zinc-800 p-3 rounded-md font-mono text-sm text-zinc-300">
+                    $ vault update
+                </pre>
+            </div>
+
+            <div className="pt-8 border-t border-zinc-800">
+                <h2 className="text-2xl font-bold mb-4">How can I assure the security of my data?</h2>
+                <p className="text-zinc-300 mb-4">
+                    VaultCLI uses Argon2 for password hashing and AES-256 encryption to secure your data. Your secrets are encrypted using your master password before being stored in the vault.
+                </p>
+                <p className="text-zinc-300">
+                    Furthermore, our zero trust architecture ensures that your data is always secure meaning even if your database is compromised no data will ever be exposed.
+                </p>
+            </div>
         </div>
-
-
-<div className='mt-8 border-t border-zinc-700 pt-8'>
-    <div>
-        <h2 className='text-xl font-bold text-start mb-4'>
-            What’s next? Building your app with VaultCLI
-        </h2>
-
-        <p className='mt-2 text-zinc-300 text-start '>
-            Now that you’ve set up VaultCLI, the next step is integrating it into your application.
-            If you’re unfamiliar with the technologies used in this project, check their official documentation below.
-        </p>
-
-        <p className='mt-2 text-zinc-300 text-start pt-2'>
-            If you get stuck or need help, you can join our community Discord and ask questions — we’re happy to help you get started.
-        </p>
-
-        <ul className='mt-6 text-blue-400 list-disc text-start space-y-2'>
-            <li className='hover:underline cursor-pointer'>
-                PostgreSQL — relational database for structured data
-            </li>
-            <li className='hover:underline cursor-pointer'>
-                Supabase — backend-as-a-service with auth and database tools
-            </li>
-            <li className='hover:underline cursor-pointer'>
-                MySQL — widely used relational database system
-            </li>
-            <li className='hover:underline cursor-pointer'>
-                MongoDB — NoSQL database for flexible, document-based storage
-            </li>
-        </ul>
-
-    </div>
-
-
-</div>
-
-<div className="mt-8">
-    <h2 className='font-bold text-xl text-start'>
-        How do I keep my app up to date?
-    </h2>
-    <p className='mt-2 text-zinc-300 text-start'>
-        To keep your app up to date with the latest version of VaultCLI, you can use the following command:
-
-        <div className="w-full h-12 flex justify-center bg-zinc-800 rounded-xl ">
-            <pre className='mt-2 text-gray text-start text-2xl'>
-                <span className='text-green-400  ml-4 mr-4'>$ vault</span>update
-            </pre>
-        </div>
-    </p>
-</div>
-
-<div className="mt-12">
-<h2 className='font-bold text-xl text-start'>
-    How can I assure the security of my data? 
-
-</h2>
-<p className='mt-4 text-zinc-300 text-start'>
-    VaultCLI uses Argon2 for password hashing and AES-256 encryption to secure your data. Your secrets are encrypted using your master password before being stored in the vault.
-   
-</p>
-<p className="text-start pt-4">
-    Furthermore, our zero trust architecture ensures that your data is always secure meaning even if your database is compromised no data will ever be exposed.
-</p>
-
-</div>
-
-
-<div>
-    <h2></h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-
-</div>
-    
-  )
+    );
 }
-
-export default Faq

@@ -1,19 +1,16 @@
 
 
 import '../App.css';
-import { BinaryBackground } from '../components/BinaryBackground';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-
 
 function Home() {
 
     return (
         <>
-            <section className='justify-center items-center flex flex-col '>
+            <section className='justify-center items-center flex flex-col min-h-screen bg-[#0d1117] text-white'>
                 <Header />
-                <BinaryBackground />
-                <pre className='ascii mt-10 mb-[-50px] '>{`
+                <pre className='ascii mt-10 mb-[-50px] text-zinc-500'>{`
 ██╗   ██╗ █████╗ ██╗   ██╗██╗  ████████╗ ██████╗██╗     ██╗
 ██║   ██║██╔══██╗██║   ██║██║  ╚══██╔══╝██╔════╝██║     ██║
 ██║   ██║███████║██║   ██║██║     ██║   ██║     ██║     ██║

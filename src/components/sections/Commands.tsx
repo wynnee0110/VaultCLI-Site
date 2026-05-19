@@ -13,10 +13,10 @@ export default function Commands() {
             example: "$ vault login\n✔ Authenticated successfully",
         },
         {
-            name:"signup",
-            description:"Creates a new account with a master password.",
-            usage:"vault signup [password]",
-            example:"$ vault signup ********\n✔ Account created"
+            name: "signup",
+            description: "Creates a new account with a master password.",
+            usage: "vault signup [password]",
+            example: "$ vault signup ********\n✔ Account created"
         },
         {
             name: "logout",
@@ -42,58 +42,42 @@ export default function Commands() {
             usage: "vault list",
             example: "$ vault list\napikey/secret_key\ndatabase/url\ngithub/token",
         },
-
         {
-            name:"update",
-            description:"Updates an existing secret in the vault.",
+            name: "update",
+            description: "Updates an existing secret in the vault.",
             usage: "vault update <key> <value>",
             example: "$ vault update apikey/secret_key ********\n✔ Updated secret at apikey/secret_key"
         }
     ];
 
     return (
-        <section id="commands" className="scroll-mt-32 mb-16 max-w-3xl">
-            {/* Header Section */}
-            <div className="mb-10">
-                <h2 className="text-start text-3xl font-semibold text-zinc-100 mb-4 tracking-tight">
-                    Commands Reference
-                </h2>
-                <p className="text-start text-zinc-400 text-lg leading-relaxed">
+        <div className="space-y-10">
+            <div>
+                <h1 className="text-3xl font-bold mb-4 pb-2 border-b border-zinc-800">Commands Reference</h1>
+                <p className="text-zinc-300">
                     Explore the complete list of available CLI commands. VaultCLI is designed to be intuitive and fast, letting you manage your secrets seamlessly directly from the terminal.
                 </p>
             </div>
 
-            {/* Commands List */}
-            <div className="space-y-6">
+            <div className="space-y-10">
                 {commands.map((cmd) => (
-                    <div key={cmd.name} className="p-6 rounded-xl border border-zinc-800 bg-zinc-900/30 hover:bg-zinc-900/50 transition-colors">
-                        <div className="flex items-center gap-3 mb-2">
-                            <h3 className="text-xl font-mono font-semibold text-emerald-400">
-                                $ vault <span className='text-zinc-100'>{cmd.name}</span>
-                            </h3>
+                    <div key={cmd.name}>
+                        <h2 className="text-xl font-semibold mb-2 font-mono">
+                            vault {cmd.name}
+                        </h2>
+                        <p className="text-zinc-300 mb-4">{cmd.description}</p>
+                        <div className="mb-2">
+                            <strong>Usage:</strong> <code className="bg-[#161b22] px-1 py-0.5 rounded text-sm font-mono ml-2 border border-zinc-800">{cmd.usage}</code>
                         </div>
-                        <p className="text-zinc-400 mb-4 leading-relaxed">
-                            {cmd.description}
-                        </p>
-                        
-                        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <h4 className="text-xs font-medium text-zinc-500 uppercase tracking-wider mb-2">Usage</h4>
-                                <code className="inline-block px-3 py-1.5 rounded-lg bg-zinc-950 border border-zinc-800 text-zinc-300 text-sm font-mono">
-                                    {cmd.usage}
-                                </code>
-                            </div>
-
-                            <div className="mb-5">
-                                <h4 className="text-xs font-medium text-zinc-500 uppercase tracking-wider mb-2">Example</h4>
-                                <div className="bg-zinc-950 border border-zinc-800 rounded-lg p-3 font-mono text-sm text-zinc-300 whitespace-pre-line leading-relaxed">
-                                    {cmd.example}
-                                </div>
-                            </div>
+                        <div>
+                            <strong>Example:</strong>
+                            <pre className="bg-[#161b22] border border-zinc-800 p-3 rounded-md font-mono text-sm text-zinc-300 mt-2 whitespace-pre-line">
+                                {cmd.example}
+                            </pre>
                         </div>
                     </div>
                 ))}
             </div>
-        </section>
+        </div>
     );
 }

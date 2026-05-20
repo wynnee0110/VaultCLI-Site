@@ -24,7 +24,7 @@ function Docs() {
         setActivePage={setActivePage}
       />
 
-      <div className="flex max-w-[1200px] mx-auto px-6 pt-10 gap-12 items-start" style={{ minHeight: 'calc(100vh - 4rem)' }}>
+      <div className="flex max-w-[1200px] mx-auto px-6 pt-6 gap-12 items-start" style={{ minHeight: 'calc(100vh - 4rem)' }}>
         
         {/* SIDEBAR */}
         <aside className="hidden md:block w-56 shrink-0 border-r border-[#30363d] pr-4 self-stretch">

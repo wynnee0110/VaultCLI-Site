@@ -38,7 +38,7 @@ export default function Commands() {
         },
         {
             name: "list",
-            description: "Lists all stored secrets in the current vault.",
+            description: "Show the list of stored secrets in the current vault.",
             usage: "vault list",
             example: "$ vault list\napikey/secret_key\ndatabase/url\ngithub/token",
         },

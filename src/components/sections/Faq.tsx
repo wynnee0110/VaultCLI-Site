@@ -70,7 +70,7 @@ export default function Faq() {
                     VaultCLI uses Argon2 for password hashing and AES-256 encryption to secure your data. Your secrets are encrypted using your master password before being stored in the vault.
                 </p>
                 <p className="text-zinc-300">
-                    Furthermore, our zero trust architecture ensures that your data is always secure meaning even if your database is compromised no data will ever be exposed.
+                    Furthermore, zero trust architecture ensures that your data is always secure meaning even if your database is compromised no data will ever be exposed.
                 </p>
             </div>
         </div>

@@ -43,7 +43,7 @@ export default function Commands() {
             example: "$ vault list\napikey/secret_key\ndatabase/url\ngithub/token",
         },
         {
-            name: "update",
+            name: "update", 
             description: "Updates an existing secret in the vault.",
             usage: "vault update <key> <value>",
             example: "$ vault update apikey/secret_key ********\n✔ Updated secret at apikey/secret_key"

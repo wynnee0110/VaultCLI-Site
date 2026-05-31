@@ -256,7 +256,7 @@ export default function Installation() {
         understand your environment before proceeding.
       </div>
 
-      <div className="mb-8 flex flex-wrap gap-2">
+      <div className="mb-8 flex flex-wrap gap-2 w-full">
         {OPERATING_SYSTEMS.map((tab) => (
           <button
             key={tab}
@@ -264,8 +264,8 @@ export default function Installation() {
             aria-pressed={activeTab === tab}
             className={`${pillButtonClass} ${
               activeTab === tab
-                ? "border-zinc-400 text-white"
-                : "border-transparent text-zinc-500 hover:border-zinc-700 hover:text-white"
+                ? "border-zinc-400 text-white inline-flex items-center gap-2"
+                : "border-transparent text-zinc-500 hover:border-zinc-700 hover:text-white inline-flex items-center gap-2"
             }`}
           >
             <OSIcon os={tab} />
